@@ -1,5 +1,5 @@
 # ASP.NET Core
-- task: 'dotnet restore'
+- task: CmdLine@2
   inputs:
     script: 'dotnet restore'
 # Build and test ASP.NET Core projects targeting .NET Core.
