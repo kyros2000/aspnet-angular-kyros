@@ -27,3 +27,6 @@ steps:
     vsVersion: '15.0'
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
+- task: CmdLine@2
+  inputs:
+    script: 'dotnet publish -c $(BuildConfiguration) -o $(Build.ArtifactStagingDirectory)'
