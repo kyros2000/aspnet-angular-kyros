@@ -21,3 +21,9 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npm install'
+- task: VSBuild@1
+  inputs:
+    solution: 'aspnetcore-angular-sample.csproj'
+    vsVersion: '15.0'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
