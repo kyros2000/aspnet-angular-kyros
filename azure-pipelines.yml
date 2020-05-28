@@ -21,12 +21,14 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npm install'
-- task: VSBuild@1
+
+- task: MSBuild@1
   inputs:
     solution: 'aspnetcore-angular-sample.csproj'
-    vsVersion: '15.0'
+    msbuildVersion: '15.0'
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
+
 - task: CmdLine@2
   inputs:
     script: 'dotnet publish -c $(BuildConfiguration) -o $(Build.ArtifactStagingDirectory)'
